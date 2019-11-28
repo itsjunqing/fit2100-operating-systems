@@ -1,0 +1,2 @@
+Process ID 0 is for scheduling.
+Process ID 1 is for initialization (aka initializing the process).

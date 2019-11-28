@@ -1,0 +1,47 @@
+Task 1
+P1:
+{ shared int x; 
+	x = 10;
+	while (1) {
+		x=x−1;
+		x=x+1;
+}
+P2:
+{ shared int x; 
+	x = 10;
+	while (1) {
+		x=x−1;
+}
+P1: 
+		if (x!=10){
+	}
+P2:
+		x=x+1;
+	}
+P1: 
+		printf("x is %d", x);
+	}
+ 
+
+Task 3
+a) 
+process max hold need
+	1			70		45	25
+	2			60		40	20
+	3			60		15	45
+	4			60		25	35
+yes, safe because the balance resources after p4 is 25, this 25 can be used to execute p1 or p2, releasing resources held from p1 or p2 after execution. these more resources can be used to execute p3.
+sequences: p2 -> p1 -> p3 -> p4
+
+b) 
+process max hold need
+	1			70		45	25
+	2			60		40	20
+	3			60		15	45
+	4			60		35	25
+no, unsafe because after p4 enters, the balance resources becomes 15, while the minimum resources amount needed is 20 by p2. so resources balance is unsufficient to execute the processes.
+
+
+Task 4
+"refer to deadlock.jpg"
+

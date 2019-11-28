@@ -1,0 +1,10 @@
+Mutex is a locking mechanism where it locks a section and prevent interruption
+Semaphore is a signaling mechanism where it 
+
+pthread_mutex_init: initialize the mutex referenced by mutex with attributes specified by attr
+pthread_mutex_lock: locks the mutex object referenced by mutex
+pthread_mutex_unlock: release the mutex object referenced by mutex
+
+sem_init: initializes the unnamed semaphore at the address pointed
+sem_wait: decrements (locks) the semaphore pointed to by sem
+sem_post: increments (unlocks) the semaphore pointed to by sem

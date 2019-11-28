@@ -1,0 +1,6 @@
+ 1995  1998 student  S bash
+ 1750  1995 student  S lxterminal
+ 1615  1750 student  S pcmanfm
+ 1587  1615 student  S lxsession
+ 1471  1587 root     S lightdm
+ 1  1471 root     S lightdm

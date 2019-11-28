@@ -1,0 +1,12 @@
+1. Which Unix command converts a PDF file to jpeg format? (Note: jpeg is a popular data compression method.)
+
+--> "pdftocairo" command, this can be found via the command "apropos "jpeg""
+
+2. Which Unix command displays the status of disk space (i.e. the number of free disk blocks) on a file system?
+
+--> "df" command, eg, "df -h" displays the statistics of the disk space in GB format
+
+3. Which Unix command displays the type of a file (e.g. ascii text, executable, etc.)?
+
+--> "file" command 
+

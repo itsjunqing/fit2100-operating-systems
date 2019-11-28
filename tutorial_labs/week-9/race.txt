@@ -1,0 +1,3 @@
+No, it is not possible for theValue to be less than 49 or more than 51 because pthread2 at most decreases theValue by 1 and pthread1 at most increases theValue by 1. As the starting value is 50, it can only at most decrease by 1 and increase by 1. 
+
+Both threads increments and decrements by using the same original value (as it is running concurrently), so the new value will be altered based on the original value (not the value updated by the other thread). 

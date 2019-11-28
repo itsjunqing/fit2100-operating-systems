@@ -1,0 +1,4 @@
+When sleep() is put in print_hello() function and removing the pthread_exit() in main(), it does not output the printf statement in print_hello function, but only prints the one in main function. It waits for one second and when the main statement completes, the entire program shuts down, causing the print_hello() to not running.
+--> Main function stops first before the print_hello() start running
+
+When sleep() is put in the main function and removing the pthread_exit() in print_hello(), it delays for one second before it prints out the final printf statement in main function. During the one second of halting, it prints out the print_hello() and subsequently the print statement in main().

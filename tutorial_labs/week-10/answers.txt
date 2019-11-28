@@ -1,0 +1,101 @@
+Synchronisation and Mutual Exclusion
+
+Question 1
+What is a race condition?
+Concurrent access to shared data may result in data inco
+
+Question 2
+What is mutual exclusion? Is mutual exclusion important for the execution of execution of concurrent processes?
+
+
+Question 3
+What is the di􏰂erence between binary semaphores and general semaphores?
+
+
+Task 1
+P1: x = 10;
+P2: while (1)
+P1: x=x−1;
+P2: if (x!=10){
+P1: printf("x is %d", x);
+P2: }
+
+Task 2
+
+
+Task 3
+
+
+Deadlock and Starvation
+
+Question 1
+What are the four conditions that create deadlocks?
+- hold and wait (process hold resource while waiting)
+- mutual exclusion (only one process use resource)
+- no preemption (cannot release resource)
+- circular weight (closed chain of process exist such that each process hold at least one resource needed by one process in another chain)
+
+Question 2
+Why should mutual exclusion not be disallowed in order to prevent deadlocks?
+Prevent the racecondition from happening.
+
+Question 3
+How can the hold-and-wait condition be prevented?
+Request the process to wait while all resources are available.
+When process request all its resources at one single time.
+
+Question 4
+Suggest two ways in which the no-preemption condition can be prevented.
+- when the process cannot proceed further as the resources are holding by the process, let this process to release resources
+two ways:
+- release from current process to let this process to run
+- release from other process to let this process to run
+
+Question 5
+Describe the three general approaches used for handling the problem of deadlocks.
+- prevention
+- avoidance (using some calculation, check if it's unsafe or safe state before running)
+- detection (can perform it during during execution)
+
+Task 1
+1. mutual exclusion (only one car can occupy a given section of the road)
+2. hold and wait (if there is a car in a quadrant, it will wait for another quadrant to be free in order to continue its journey, B need to wait for C to complete before continue)
+3. no preemption (if a car is holding its resources, aka at the quadrant, the car cannot be reversed)
+4. circular weight (if every car is its in own quadrant, it will form a circular chain)
+
+Task 2
+- prevention: apply some policies to prevent the condition from happening, impose a traffic light policy to allow one process to run at a time (prevent circular weight, mutual exclusion and hold and wait)
+- avoidance: using some calculation to detect if it's safe or unsafe before the car can proceed its journey. need to determine which car to proceed first to determine the safeness states
+- detection: if deadlock happen, solve it by let the car to reverse, dispose the car. aka release all the processes by one process to let other process to proceed
+
+Task 3
+a) 
+process max hold need
+	1			70		45	25
+	2			60		40	20
+	3			60		15	45
+	4			60		25	35
+
+
+b) 
+process max hold need
+	1			70		45	25
+	2			60		40	20
+	3			60		15	45
+	4			60		35	25
+
+
+Task 4
+P0: get -> A B C
+P1: get -> D E B
+-> deadlock, B is occupied by P0
+
+P1: get -> D E B
+P2: get -> C F D
+-> deadlock, D is occupied by P1
+
+P0: get -> A B C
+P2: get -> C F D
+-> deadlock, C is occupied by P0
+
+

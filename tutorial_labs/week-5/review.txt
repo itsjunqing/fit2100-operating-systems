@@ -1,0 +1,33 @@
+Question 1
+Define three techniques for performing I/O.
+--> programmed i/o, interrupt i/o and DMA
+
+
+Question 2
+What is the difference between block-oriented devices and stream-oriented devices?
+--> 
+
+
+
+Question 3
+Discuss how could the system performance be improved by using double buffering rather than a single buffer for I/O operations?
+--> double buffering allows two operations to proceed in parallel rather than in sequence. When data is transferred completely to the buffer, it will then switch to the second buffer to transfer the remaining data. While the transfer is still proceding to the second buffer, the data in the first buffer is transferred to the process while emptying the first buffer (to allow an empty buffer to be stored in the next subsequent round)
+
+
+Question 4
+What delay elements are involved in a disk read or write?
+--> seek time, rotational delay and access time
+
+
+Question 5
+Define the following disk scheduling algorithms: FIFO, SSTF, SCAN, and C-SCAN.
+--> FIFO process all processes in sequential order, meaning first come first served, fair to all processes
+		SSTF process by searching the next minimum seek time and process them accordingly
+		SCAN process all processes by searching for the tracks nearest to the innermost and outermost track
+		C-SCAN only access the tracks in one direction, meaning process only processes moving in upwards direction (or downwards)
+
+
+Question 6
+What is the difference between internal and external fragmentation in terms of allocation of blocks2 on disk?
+--> internal fragmentation is the space balance when a smaller size is allocated to a big chunk of memory, so the balance space available is internal fragmentation
+--> external fragmentation is the space unused when a files are stored continuously in blocks of memory, resulting in "free blocks" to exist between the files, such free blocks are insufficient to store large files

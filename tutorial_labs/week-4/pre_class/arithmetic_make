@@ -1,0 +1,14 @@
+OBJS =  arithmetic.o pre_class.o
+CC = gcc
+CFLAGS = -Wall -c
+LFLAGS = -Wall
+
+myarithmetic: $(OBJS)
+	$(CC) $(LFLAGS) $(OBJS) -o myarithmetic
+arithmetic.o: arithmetic.c arithmetic.h
+	$(CC) $(CFLAGS) arithmetic.c
+pre_class.o: pre_class.c
+	$(CC) $(CFLAGS) pre_class.c
+
+
+

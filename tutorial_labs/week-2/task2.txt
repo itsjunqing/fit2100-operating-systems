@@ -1,0 +1,29 @@
+b) 	error found at line 7, found from "task2.c:7:14"
+
+c)	task2-debug larger than task2 may be due to the task2-debug has additional debugging information in addition to the original executable binaries information. This is useful for debugging purposes. 
+
+d) 	when valgrind is run on "task2-debug" file, the memory check explicitly describes the line in the "task2.c" file that causes the failure of writing the memory. For instance, the line "by 0x1085B3: main (task2.c:7)" describes the writing of memory has failed at line 7. on the other hand, when valgrind is run on "task2" file, it does not explicitly describe the line that caused the error but only states that file that caused the error, such as "by 0x1085B3: main (in /media/sf_lbuntu/task2)". thus, the -g command option provides us an ease of debugging for a compile failed file.
+
+Enter a word: hello
+==2102== Invalid write of size 1
+==2102==    at 0x48AE5A5: _IO_vfscanf (vfscanf.c:1103)
+==2102==    by 0x48B9C2C: __isoc99_scanf (isoc99_scanf.c:37)
+==2102==    by 0x1085B3: main (task2.c:7)
+==2102==  Address 0x61 is not stack'd, malloc'd or (recently) free'd
+
+Enter a word: hello
+==2166== Invalid write of size 1
+==2166==    at 0x48AE5A5: _IO_vfscanf (vfscanf.c:1103)
+==2166==    by 0x48B9C2C: __isoc99_scanf (isoc99_scanf.c:37)
+==2166==    by 0x1085B3: main (in /media/sf_lbuntu/task2)
+==2166==  Address 0x61 is not stack'd, malloc'd or (recently) free'd
+
+
+e)	the main function is supposed to request a string input from the user and stores the string at the variable "string", but it failed to write the memory at that variable because that "string" variable is declared as a character with a memory size of 1 byte, but a string is made up of more than one character. in other words, the written program (flawed) is trying to store the information of multiple characters into a memory space that can only store one character. 
+
+the ASCII character code for 'a' is 61. "0x61" describes the "string" detected the character 'a' during the printing. 
+
+
+
+
+

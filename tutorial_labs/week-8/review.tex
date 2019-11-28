@@ -1,0 +1,134 @@
+\documentclass[17pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry, enumitem}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+	
+	\begin{center}
+		{\Large Week 8 - Tutorial}\\
+		\vspace{5mm}
+		{\large Lim Jun Qing}\\
+		\vspace{3mm}
+		{\large 30029937}\\
+		\vspace{3mm}
+	\end{center}
+	
+	\section{Review Questions}
+	\begin{enumerate}
+		\item What are the three types of processor scheduling?
+		
+		Long-term, medium-term and short-term.
+		
+		\item What is the difference between turnaround time and response time?
+		
+		Turnaround time is the time waited from the process request to the completion of the process execution whereas response time is the time waited for a process to be first executed. 
+		
+		\item What is the difference between preemptive and non-preemptive?
+		
+		Preemptive is where the computer resources is only allocated for a limited time while non-preemptive is where computer resources allocated cannot be "taken back" by the CPU. In other words, non-preemptive allocates a fix amount of resources at the start of the process execution.
+		
+		\item Is a non-preemptive scheduling approach a good choice for interactive systems? Why?
+		
+		Preemptive, because it executes based on allocated time slices and allow the CPU to provide results from time to time without the process waiting for too long.
+		
+		\item What is the meaning of the term feedback scheduling?
+		
+		The scheduling is done based on a time quantum basis using priorities. It executes process based on higher priorities.
+	\end{enumerate}
+
+	\section{Problem-Solving Tasks}
+	\subsection{Task 1}
+	{\setlength{\parindent}{0cm}
+	On a system with n CPUs, what is the maximum number of processes that can be in the READY, RUN, and BLOCKED states?\\
+	
+	p: number of processes
+	
+	\textbf{READY:} minimum is 0 and maximum is p because the ready state can hold all processes available in the CPU.
+	
+	\textbf{RUN:} minimum is 0 and maximum is n because the running state can only execute one process at a time. If there are n CPUs, n processes can be executed concurrently.
+	
+	\textbf{BLOCKED:} minimum is 0 and maximum is p because blocked state can hold all processess available in the CPU.\\
+	
+	Both READY and BLOCKED state requires the amount of main memory to be taken into account. If memory is not sufficient, the number of processes that it can hold is restricted.
+	}
+	
+	\newpage
+	\subsection{Task 2}
+	\textbf{For First-Come-First-Served:}
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c| } 
+			\hline
+			Process & Arrival Time & Processing Time & Execution Time & Completition Time & Turnaround Time \\ 
+			\hline
+			A & 0  & 3	& 0 & 3 & 3-0=3 \\
+			\hline
+			B & 1 & 6 & 3 & 9 & 9-1=8 \\
+			\hline
+			C & 4 & 4 & 9 & 13 & 13-4=9 \\
+			\hline
+			D & 6 & 2 & 13 & 15 & 15-6=9 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	Average turnaround time: \[\frac{3+8+9+9}{4} = 7.25 seconds\]
+	
+	\noindent\textbf{For Shortest Process Next:}
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c| } 
+			\hline
+			Process & Arrival Time & Processing Time & Execution Time & Completition Time & Turnaround Time \\ 
+			\hline
+			A & 0  & 3	& 0 & 3 & 3-0=3 \\
+			\hline
+			B & 1 & 6 & 3 & 9 & 9-1=8 \\
+			\hline
+			C & 4 & 4 & 11 & 15 & 15-4=11 \\
+			\hline
+			D & 6 & 2 & 9 & 11 & 11-6=5 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	Average turnaround time: \[\frac{3+8+11+5}{4} = 6.75 seconds\]
+
+	\noindent\textbf{For Round Robin:}
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c| } 
+			\hline
+			Process & Arrival Time & Processing Time & Execution Time & Completition Time & Turnaround Time \\ 
+			\hline
+			A & 0  & 3	& 0 & 5 & 5-0=5 \\
+			\hline
+			B & 1 & 6 & 2 & 15 & 15-1=14 \\
+			\hline
+			C & 4 & 4 & 5 & 13 & 13-4=9 \\
+			\hline
+			D & 6 & 2 & 9 & 11 & 11-6=5 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	Average turnaround time: \[\frac{5+14+9+5}{4} = 8.25 seconds\]
+
+	\indent Average throughput time for all 3 scheduling: \[\frac{15}{4} = 3.75 seconds\]\\	
+	
+	\subsection{Task 5}
+	\begin{enumerate}[label=(\alph*)]
+		
+		\item What would be the effect of putting two pointers to the same process in the READY queue?
+		
+		The same process will then be executed twice.
+		
+		\item What would be the major advantage of this scheme?
+		
+		It could allow process to be prioritized more easily.
+		
+		\item How could you modify the basic Round Robin algorithm to achieve the same effect without having the duplicate pointers?
+		
+		Increase the time slices for every process execution round.
+		
+	\end{enumerate}
+	
+\end{document}

@@ -1,0 +1,21 @@
+Question 1
+internal fragmentation:
+space wasted in the block or a frame
+
+external fragmentation:
+whenn dynamic allocated memory is used, then there are wasted space between blocks
+
+Question 2
+page:
+memory is divided into frames and processes into pages
+
+frame:
+
+Question 3
+page: 
+
+segment:
+
+Question 4
+virtual memory
+

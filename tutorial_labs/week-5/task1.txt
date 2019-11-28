@@ -1,0 +1,33 @@
+Assume that the disk head is initially positioned on track 100 and is moving in the direction of decreasing track number. 
+For the following sequence of disk track requests:
+27, 129, 110, 186, 147, 41, 10, 64, 120
+
+
+***start from track 100***
+
+(a) Describe or trace the order in which these requests are served based on the four disk scheduling algorithms: 
+(i) FIFO - first come first served
+100, 27, 129, 110, 186, 147, 41, 10, 64, 120
+
+(ii) SSTF - shortest time first
+100, 110, 120, 129, 147, 186, 64, 41, 27, 10
+
+(iii) SCAN - one direction then twist direction
+100, 64, 41, 27, 10, 110, 120, 129, 147, 186
+
+(iv) C-SCAN - one direction only
+100, 64, 41, 27, 10, 186, 147, 129, 120, 110
+
+
+(b) Calculate the average seek length (in terms of the number of tracks traversed) for each of the disk scheduling algorithms.
+(i) FIFO, 
+
+
+(ii) SSTF, 
+shortest time first - 110, 120, 129, 147, 186
+
+(iii) SCAN, 
+move downwards, then upwards - 110, 120, 129, 147, 186, 64, 41, 27, 10
+
+(iv) C-SCAN.
+move downwards, then upwards, then downwards - 100, 110, 120, 129, 147, 186, 10, 27, 41, 64

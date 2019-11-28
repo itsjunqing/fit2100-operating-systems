@@ -1,0 +1,32 @@
+Imagine a program that works with data file, where each file is made up of fixed-size data records of 128 bytes each.
+
+Calculate how much disk space (in sectors, tracks, and surfaces) will be required to store such a data file containing 300,000 records if the disk is has 512 bytes per sector, 96 sectors per track, 110 tracks per surface, and 8 usable surfaces.
+
+
+
+1 record = 128 bytes
+300,000 records = 36,900,000 bytes
+
+8 surfaces = 880 tracks
+880 tracks = 84480 sectors
+84480 sectors = 43,253,760 bytes
+
+
+
+
+--------------------------------------------------------------------
+
+1 record = 128 bytes
+1 sector = 512 bytes (1 block)
+				 = 512/ 128 (4 records)
+--> each sector (or each block) can store 4 records
+
+300000/4 = 75,000 sectors
+--> we need 75k sectors to store all records
+
+75000/96 = 782 tracks
+782/110 = 8 surfaces
+--> we need 8 surfaces to store all 300k records
+
+
+

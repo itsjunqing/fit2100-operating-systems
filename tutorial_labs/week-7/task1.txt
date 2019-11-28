@@ -1,0 +1,3 @@
+We can try to change the value to 100000, it may output 4 consecutive lines
+
+When delay code is switched to sleep(2), it prints out P,C consecutively and continuously. Unlike using the loop to delay, this sleep uses "seconds" to delay each printing.

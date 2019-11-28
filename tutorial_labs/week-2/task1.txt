@@ -1,0 +1,7 @@
+a) 	it represents the abosolute pathname 
+
+b) 	'.' represents the current directory
+		'..' represents the parent directory (which is also the directory preceding the current directory)
+		'~' represents the home directory (also known as the user's directory)
+
+c)	putting "./" infront of the executable file tells the bash shell to look at search for the executable file at the current directory. For instance, "./abc", is asking bash to run the executable file named "abc". If "./" is not specified, bash may be confused between the executable file and its commands. For instance, "ls" command lists out the files in current dir. If "./" is not stated like running "ls" instead of "./ls", then bash will the command of file listing instead of running the compiled file. 
